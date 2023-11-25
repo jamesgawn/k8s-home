@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
+  ipFamilyPolicy: PreferDualStack
   tls:
     - hosts:
         - helloworld.gawn.dev
