@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  tls:
+    - hosts:
+        - home.gawn.dev
+        - helloworld.gawn.dev
+      secretName: cloudflare-origin-cert
+  rules:
+    - host: helloworld.gawn.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: gohelloworld
+                port:
+                  number: 80
+--- 
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: cloudflare-origin-cert
+  namespace: default
+spec:
+  encryptedData:
+    tls.crt: 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
+    tls.key: AgAkD8JLFLXW7Scnz5Ey2kyepg7N2d4DBH4M7AfLq/HRJD0LSZ1d205pO202rMcpVDvUJEmQJE+UV4XP3H1Np6U3tgnxk2C0tzALGNDPJtlJLWfa/wDX+AN2U/UdocS4cHKLDfeUv8B9KZ5zTHqZ/A0unpoDAlenVTDK15yg9PX2YNbZsGJChAWAt8/Sv8380oWyN0YOah+H+TFjvXByzJUOdK42m2XbyTXMJiUnw5iPsqNAtJ+FXoFIqbjBX9F4dEM1Q4S0hCaMP0u6HMvfQJMHUJMQ4gCaiMJigUuhRPPcA3p8v3haylpIFEJZOd5htRU2LIHSMU/knxBlpE/1NnhL4TVHQe+tQXivwyOGLXrpj6rhYiYZKaz5NPNAKGWsznkbs3fsSq2YXOJWGyMw+UuM+6zYvs4Fbp047aS/t2vk0EwqbxqdhHEnHehqBkjDdF9cQlmNGuqpVc7jBCTTSzLgB7h4jNOQkSa70sLvwkAWxrTqDmi2o1iTZCohTOdGkWAL+XsjoHUh5fIiFFLXZP5nirjkVf1vwhWgcJ5TT060MIBQCvdbhoetrmtUZ4GWYlJFbIYZAvLeqgotSVCrd2pBtU4N1Jhxzud4pyrBpk0pSQTrsn2PvIPIJMR+FxW3si5gAmS/o2Z6rNgX5WHxzBr9QmRLiqYFX4tYLQByPQn6+LwsXLp7ShIKoBqJYI/a7CyNSSR3t6JajXL310AwAZWmT++s0NYAFdCxuUKLpYobpDBucsbHLqx6/KUAYwXNyRGuwGbOhyR2T8nPW8Lrm4BVvgRXQZSdtj+ZJK6ferNmOhIRDqLx9MBuKPNtxDj4tKdZzp2hSjsuEFKBaAy70z32NPwrBFfSHex1iUMpKd4Hm45WcfI/njhPs7N/7iAY7mYfRbrOFFw+qEFAMYfvCCPdDP9BLUvxahh8LHoab281V1AjHagPz/Zsyp1WjhdWYsBn1kXBybEY9S6TYh63Io5Z7mKrq7zVXA4GSWNHC1zwWif32RX60vyYnfrcSyCobher
+  template:
+    metadata:
+      creationTimestamp: null
+      name: cloudflare-origin-cert
+      namespace: default
+    type: kubernetes.io/tls
