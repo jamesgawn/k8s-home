@@ -8,6 +8,9 @@ metadata:
     app.kubernetes.io/part-of: ingress
 spec:
   type: NodePort
+  ipFamilies:
+  - IPv6
+  ipFamilyPolicy: RequireDualStack
   ports:
     - name: http
       port: 80
