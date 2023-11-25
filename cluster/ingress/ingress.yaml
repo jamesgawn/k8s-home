@@ -9,6 +9,7 @@ spec:
   tls:
     - hosts:
         - helloworld.gawn.dev
+        - kube-dash.gawn.dev
         - argocd.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
@@ -22,6 +23,16 @@ spec:
                 name: gohelloworld
                 port:
                   name: http
+    - host: kube-dash.gawn.dev
+      http:
+        paths: 
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: kubernetes-dashboard
+                port:
+                  name: https
     - host: argocd.gawn.dev
       http:
         paths: 
@@ -30,5 +41,5 @@ spec:
             backend:
               service:
                 name: argocd-server
-                port: 
+                port:
                   name: http
