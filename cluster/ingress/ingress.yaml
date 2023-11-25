@@ -3,11 +3,11 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
-  tls:
-    - hosts:
-        - helloworld.gawn.dev
-        - pi-node-a.local
-      secretName: cloudflare-origin-cert
+  # tls:
+  #   - hosts:
+  #       - helloworld.gawn.dev
+  #       - pi-node-a.local
+  #     secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
       http:
