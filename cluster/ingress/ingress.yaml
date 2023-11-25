@@ -21,7 +21,7 @@ spec:
               service:
                 name: gohelloworld
                 port:
-                  number: 80
+                  name: http
     - host: argocd.gawn.dev
       http:
         paths: 
@@ -31,4 +31,4 @@ spec:
               service:
                 name: argocd-server
                 port: 
-                  number: http
+                  name: http
