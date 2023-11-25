@@ -8,6 +8,8 @@ spec:
   #       - helloworld.gawn.dev
   #       - pi-node-a.local
   #     secretName: cloudflare-origin-cert
+  externalIPs:
+    - "192.168.20.171"
   rules:
     - host: helloworld.gawn.dev
       http:
