@@ -21,3 +21,4 @@ spec:
       nodePort: 30443
   selector:
     app.kubernetes.io/name: ingress
+    app.kubernetes.io/part-of: ingress

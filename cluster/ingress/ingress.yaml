@@ -1,13 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+    app.kubernetes.io/name: ingress
+    app.kubernetes.io/part-of: ingress
 spec:
-  # tls:
-  #   - hosts:
-  #       - helloworld.gawn.dev
-  #       - pi-node-a.local
-  #     secretName: cloudflare-origin-cert
+  tls:
+    - hosts:
+        - helloworld.gawn.dev
+        - pi-node-a.local
+      secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
       http:
