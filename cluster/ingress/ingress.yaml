@@ -9,6 +9,7 @@ spec:
   tls:
     - hosts:
         - helloworld.gawn.dev
+        - argocd.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
