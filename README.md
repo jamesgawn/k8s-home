@@ -73,7 +73,22 @@ helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
 ```
 1. Install sealed secrets 
 ```bash
-helm install sealed-secrets -n kube-system sealed-secrets/sealed-secrets
+helm install sealed-secrets -n shared-services sealed-secrets/sealed-secrets --create-namespace
+```
+
+2. Install useful tools
+```bash
+sudo snap install jq
+KUBESEAL_VERSION=$(curl -s https://api.github.com/repos/bitnami-labs/sealed-secrets/tags | jq -r '.[0].name' | cut -c 2-)
+wget "https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-arm64.tar.gz"
+tar -xvzf kubeseal-${KUBESEAL_VERSION}-linux-arm64.tar.gz kubeseal
+rm kubeseal-${KUBESEAL_VERSION}-linux-arm64.tar.gz kubeseal
+sudo install -m 755 kubeseal /usr/local/bin/kubeseal
+```
+
+3. Retrieve the public key to encrypt secrets
+```bash
+kubeseal --controller-name=sealed-secrets --controller-namespace=shared-services --fetch-cert > sealed-secret-public-key.pem
 ```
 
 ### Enable gitops integration via argocd
