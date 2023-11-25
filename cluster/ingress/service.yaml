@@ -10,13 +10,15 @@ spec:
   type: NodePort
   ports:
     - name: http
+      protocol: TCP
       port: 80
       targetPort: 80
-      protocol: TCP
+      nodePort: 30080
     - name: https
-      port: 443
-      targetPort: 443
       protocol: TCP
+      port: 433
+      targetPort: 443
+      nodePort: 30443
   selector:
     app.kubernetes.io/name: ingress
     app.kubernetes.io/part-of: ingress
