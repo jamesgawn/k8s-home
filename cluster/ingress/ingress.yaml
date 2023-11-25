@@ -21,3 +21,13 @@ spec:
                 name: gohelloworld
                 port:
                   number: 80
+    - host: argocd.gawn.dev
+      http:
+        paths: 
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: argocd-server
+                port: 
+                  number: http
