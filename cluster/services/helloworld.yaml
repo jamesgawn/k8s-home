@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gohelloworld
+  labels:
+    app: gohelloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gohelloworld
+  template:
+    metadata:
+      labels:
+        app: gohelloworld
+    spec:
+      containers:
+      - name: helloworld
+        image: ghcr.io/jamesgawn/gohelloworld:1.0.1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gohelloworld
+spec:
+  selector:
+    app: gohelloworld
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+---
