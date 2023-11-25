@@ -5,11 +5,20 @@ metadata:
 spec:
   tls:
     - hosts:
-        - home.gawn.dev
         - helloworld.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: gohelloworld
+                port:
+                  number: 80
+    - host: pi-node-a
       http:
         paths:
           - pathType: Prefix
