@@ -1,8 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-    app.kubernetes.io/name: ingress
-    app.kubernetes.io/part-of: ingress
+    name: ingress
+    labels:
+      app.kubernetes.io/name: ingress
+      app.kubernetes.io/part-of: ingress
 spec:
   tls:
     - hosts:
