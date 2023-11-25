@@ -8,6 +8,8 @@ metadata:
     app.kubernetes.io/part-of: ingress
 spec:
   type: NodePort
+  externalIPs:
+    - "192.168.20.171"
   ports:
     - name: http
       protocol: TCP
