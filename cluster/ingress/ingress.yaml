@@ -7,6 +7,7 @@ spec:
   tls:
     - hosts:
         - helloworld.gawn.dev
+        - pi-node-a.local
       secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
