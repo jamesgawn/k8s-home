@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: ingress-kubedash-minion
+    namespace: kube-system
+    labels:
+      app.kubernetes.io/name: ingress-kubedash-minion
+      app.kubernetes.io/part-of: ingress-kubedash-minion
+    annotations:
+      nginx.org/mergeable-ingress-type: "minion"
+spec:
+  tls:
+    - hosts:
+        - kube-dash.gawn.dev
+      secretName: cloudflare-origin-cert
+  rules:
+    - host: kube-dash.gawn.dev
+      http:
+        paths: 
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: kube-dash-svc-bridge
+                port:
+                  name: https

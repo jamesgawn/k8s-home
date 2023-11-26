@@ -5,12 +5,13 @@ metadata:
     labels:
       app.kubernetes.io/name: ingress
       app.kubernetes.io/part-of: ingress
+    annotations:
+      nginx.org/mergeable-ingress-type: "master"
 spec:
   tls:
     - hosts:
         - helloworld.gawn.dev
         - kube-dash.gawn.dev
-        - argocd.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
@@ -30,7 +31,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: kubernetes-dashboard-svc-bridge
+                name: kube-dash-svc-bridge
                 port:
                   name: https
     # - host: argocd.gawn.dev
