@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: ghcr.io/jamesgawn/gohelloworld:1.0.1
+        image: ghcr.io/jamesgawn/gohelloworld:1.0.7
         ports:
         - containerPort: 8080
         resources:
