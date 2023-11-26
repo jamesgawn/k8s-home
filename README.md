@@ -32,6 +32,7 @@ microk8s status --wait-ready
 ```bash
 microk8s enable ingress 
 microk8s enable metrics-server
+microk8s enable dashboard
 ```
 
 7. Install kubectl cli
@@ -118,6 +119,13 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.pas
 4. Login to portal. If you've forwarded the port it should be available at https://localhost:8080.
 
 ## How to
+
+### How to obtain the token to login to the Kubernetes Dashboard
+
+```bash
+kubectl get secret microk8s-dashboard-token -n kube-system -o jsonpath={".data.token"} | base64 -d ; echo
+```
+
 ### How to generate a new sealed secret
 
 1. Create the insecure secret file or using the template provided:
