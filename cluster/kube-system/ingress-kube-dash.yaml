@@ -14,11 +14,12 @@ spec:
   rules:
     - host: dash.gawn.dev
       http:
-        paths: 
+        paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
                 name: kubernetes-dashboard
                 port:
-                  name: https
+                  number: 443
+            
