@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - argco.gawn.dev
+        - argocd.gawn.dev
       secretName: cloudflare-origin-cert-secret
   rules:
-    - host: argco.gawn.dev
+    - host: argocd.gawn.dev
       http:
         paths:
           - pathType: Prefix
