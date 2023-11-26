@@ -1,8 +1,10 @@
-apiVersion: argoproj.io/v1alpha1
+apiversion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: csi-driver-nfs
   namespace: shared-services
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
