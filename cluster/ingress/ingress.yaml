@@ -23,3 +23,13 @@ spec:
                 name: gohelloworld
                 port:
                   name: http
+    - host: test.gawn.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: gohelloworld
+                port:
+                  name: http
