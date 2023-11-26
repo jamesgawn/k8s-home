@@ -5,6 +5,7 @@ metadata:
     namespace: kube-system
     annotations:
       nginx.org/mergeable-ingress-type: "minion"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   tls:
     - hosts:
