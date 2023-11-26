@@ -3,9 +3,6 @@ kind: Ingress
 metadata:
     name: ingress-kubedash-minion
     namespace: kube-system
-    labels:
-      app.kubernetes.io/name: ingress-kubedash-minion
-      app.kubernetes.io/part-of: ingress-kubedash-minion
     annotations:
       nginx.org/mergeable-ingress-type: "minion"
 spec:
