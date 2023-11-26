@@ -11,6 +11,7 @@ spec:
   tls:
     - hosts:
         - helloworld.gawn.dev
+        - kube-dash.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
     - host: helloworld.gawn.dev
