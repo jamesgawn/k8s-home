@@ -1,25 +1,25 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-    name: ingress
-    labels:
-      app.kubernetes.io/name: ingress
-      app.kubernetes.io/part-of: ingress
-    annotations:
-      nginx.org/mergeable-ingress-type: "master"
-spec:
-  tls:
-    - hosts:
-        - helloworld.gawn.dev
-      secretName: cloudflare-origin-cert
-  rules:
-    - host: helloworld.gawn.dev
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: gohelloworld
-                port:
-                  name: http
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#     name: ingress
+#     labels:
+#       app.kubernetes.io/name: ingress
+#       app.kubernetes.io/part-of: ingress
+#     annotations:
+#       nginx.org/mergeable-ingress-type: "master"
+# spec:
+#   tls:
+#     - hosts:
+#         - helloworld.gawn.dev
+#       secretName: cloudflare-origin-cert
+#   rules:
+#     - host: helloworld.gawn.dev
+#       http:
+#         paths:
+#           - pathType: Prefix
+#             path: "/"
+#             backend:
+#               service:
+#                 name: gohelloworld
+#                 port:
+#                   name: http
