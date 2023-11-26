@@ -24,23 +24,3 @@ spec:
                 name: gohelloworld
                 port:
                   name: http
-    - host: kube-dash.gawn.dev
-      http:
-        paths: 
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: kube-dash-svc-bridge
-                port:
-                  name: https
-    # - host: argocd.gawn.dev
-    #   http:
-    #     paths: 
-    #       - pathType: Prefix
-    #         path: "/"
-    #         backend:
-    #           service:
-    #             name: argocd-server
-    #             port:
-    #               name: https
