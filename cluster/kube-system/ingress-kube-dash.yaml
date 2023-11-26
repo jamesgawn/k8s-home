@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - kube-dash.gawn.dev
+        - dash.gawn.dev
       secretName: cloudflare-origin-cert-secret
   rules:
-    - host: kube-dash.gawn.dev
+    - host: dash.gawn.dev
       http:
         paths: 
           - pathType: Prefix
