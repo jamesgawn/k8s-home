@@ -17,4 +17,4 @@ spec:
         kubeletDir: "/var/snap/microk8s/common/var/lib/kubelet"
   destination:
     server: "http://kubernetes.default.svc"
-    namespace: shared-services
+    namespace: default
