@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: csi-driver-nfs
+  namespace: shared-services
+spec:
+  project: default
+  source:
+    chart: csi-driver-nfs
+    repoURL: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+    targetRevision: 4.5.0
+    helm:
+      releaseName: csi-driver-nfs
+      valuesObject:
+        kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
+  destination:
+    server: "http://kubernetes.default.svc"
+    namespace: shared-services
