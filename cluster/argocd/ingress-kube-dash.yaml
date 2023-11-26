@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: ingress-argco-minion
+    namespace: kube-system
+    annotations:
+      nginx.org/mergeable-ingress-type: "minon"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+    - hosts:
+        - argco.gawn.dev
+      secretName: cloudflare-origin-cert-secret
+  rules:
+    - host: argco.gawn.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443
+            
