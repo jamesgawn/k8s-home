@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
     name: ingress-argco-minion
-    namespace: kube-system
+    namespace: argocd
     annotations:
       nginx.org/mergeable-ingress-type: "minon"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
