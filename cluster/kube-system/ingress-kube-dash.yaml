@@ -9,6 +9,10 @@ metadata:
     annotations:
       nginx.org/mergeable-ingress-type: "minion"
 spec:
+  tls:
+    - hosts:
+        - kube-dash.gawn.dev
+      secretName: cloudflare-origin-cert
   rules:
     - host: kube-dash.gawn.dev
       http:

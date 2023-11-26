@@ -145,6 +145,17 @@ You can obtain the public key with the following command:
 ```bash
 kubeseal --fetch-cert \
 --controller-name=sealed-secrets \
---controller-namespace=flux-system \
+--controller-namespace=shared-services \
 > sealed-secret-public-cert.pem
+```
+### How to generate a new TLS sealed secret
+
+1. Grab the cert.pem and key.pem and ensure they're in your current folder
+2. Create the insecure secret file:
+```bash
+kubectl -n default create secret tls cloudflare-origin-cert-secret --key key.pem --cert cert.pem --dry-run=client -o yaml > cloudflare-origin-cert-secret.yaml
+```
+3. Secure it using public key
+```bash
+kubeseal --format=yaml --cert=sealed-secret-public-cert.pem < cloudflare-origin-cert-secret.yaml > cloudflare-origin-cert-secret-sealed.yaml
 ```
