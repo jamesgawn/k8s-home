@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: csi-driver-nfs
       valuesObject:
-        kubeletDir="/var/snap/microk8s/common/var/lib/kubelet"
+        kubeletDir: "/var/snap/microk8s/common/var/lib/kubelet"
   destination:
     server: "http://kubernetes.default.svc"
     namespace: shared-services
