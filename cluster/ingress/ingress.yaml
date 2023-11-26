@@ -30,16 +30,16 @@ spec:
             path: "/"
             backend:
               service:
-                name: kubernetes-dashboard
+                name: kubernetes-dashboard-svc-bridge
                 port:
                   name: https
-    - host: argocd.gawn.dev
-      http:
-        paths: 
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: argocd-server
-                port:
-                  name: http
+    # - host: argocd.gawn.dev
+    #   http:
+    #     paths: 
+    #       - pathType: Prefix
+    #         path: "/"
+    #         backend:
+    #           service:
+    #             name: argocd-server
+    #             port:
+    #               name: https
