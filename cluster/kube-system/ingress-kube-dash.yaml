@@ -4,7 +4,7 @@ metadata:
     name: ingress-kubedash-minion
     namespace: kube-system
     annotations:
-      nginx.org/mergeable-ingress-type: "master"
+      nginx.org/mergeable-ingress-type: "minon"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   tls:
