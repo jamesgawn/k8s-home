@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - kube-dash.gawn.dev
-      secretName: cloudflare-origin-cert
+      secretName: cloudflare-origin-cert-secret
   rules:
     - host: kube-dash.gawn.dev
       http:
