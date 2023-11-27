@@ -4,7 +4,7 @@ metadata:
   name: helloworld
 spec:
   selector:
-    app: helloworld
+    app: gohelloworld
   ports:
     - name: http
       protocol: TCP
