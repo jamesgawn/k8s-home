@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: csi-driver-nfs
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: >-
+      https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+    targetRevision: v4.5.0
+    helm:
+      parameters:
+        - name: kubeletDir
+          value: /var/snap/microk8s/common/var/lib/kubelet
+    chart: csi-driver-nfs
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: shared-services
