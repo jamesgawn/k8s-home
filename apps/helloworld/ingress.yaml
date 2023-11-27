@@ -8,7 +8,7 @@ spec:
   tls:
     - hosts:
         - test.gawn.dev
-      secretName: cloudflare-origin-cert-secret
+      secretName: cloudflare-origin-cert
   rules:
     - host: test.gawn.dev
       http:
