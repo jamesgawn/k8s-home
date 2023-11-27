@@ -4,9 +4,6 @@ namespace: default
 metadata:
   name: helloworld
 
-commonLabels:
-  app: helloworld
-
 resources:
 - ingress.yaml
 - deployment.yaml
