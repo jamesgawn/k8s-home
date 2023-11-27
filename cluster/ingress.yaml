@@ -13,13 +13,3 @@ spec:
         - helloworld.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
-    - host: helloworld.gawn.dev
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: gohelloworld
-                port:
-                  name: http
