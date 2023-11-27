@@ -17,7 +17,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: gohelloworld
+                name: helloworld
                 port:
                   name: http
             
