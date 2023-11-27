@@ -6,7 +6,7 @@ metadata:
     selector:
       app: gohelloworld
       ports:
-        name: http
+      - name: http
         protocol: TCP
         port: 80
         targetPort: 8080
