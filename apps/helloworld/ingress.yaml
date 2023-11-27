@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - test.gawn.dev
+        - helloworld.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
-    - host: test.gawn.dev
+    - host: helloworld.gawn.dev
       http:
         paths:
           - pathType: Prefix
