@@ -5,7 +5,7 @@ metadata:
   name: helloworld
 
 commonLabels:
-  app.kubernetes.io/part-of: ingress
+  app: helloworld
 
 resources:
 - ingress.yaml
