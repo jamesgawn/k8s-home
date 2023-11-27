@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: ingress-helloworld-minon
+    annotations:
+      nginx.org/mergeable-ingress-type: "minon"
+spec:
+  tls:
+    - hosts:
+        - test.gawn.dev
+      secretName: cloudflare-origin-cert-secret
+  rules:
+    - host: test.gawn.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: helloworld
+                port:
+                  name: http
+            

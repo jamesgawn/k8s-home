@@ -1,0 +1,26 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - name: helloworld
+          image: ghcr.io/jamesgawn/gohelloworld:1.0.8
+          ports:
+            - containerPort: 8080
+          resources:
+            requests: 
+              cpu: "200m"
+              memory: "10Mi"
+            limits:
+              cpu: "500m"
+              memory: "100Mi"
