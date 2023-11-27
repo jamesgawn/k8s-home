@@ -13,7 +13,7 @@ spec:
         app: helloworld
     spec:
       containers:
-        - name: helloworld
+        - name: gohelloworld
           image: ghcr.io/jamesgawn/gohelloworld:1.0.8
           ports:
             - containerPort: 8080
