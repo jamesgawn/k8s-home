@@ -10,6 +10,16 @@ metadata:
 spec:
   tls:
     - hosts:
-        - helloworld.gawn.dev
+        - dummy.gawn.dev
       secretName: cloudflare-origin-cert
   rules:
+    - host: dummy.gawn.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: helloworld
+                port:
+                  name: http
