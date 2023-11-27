@@ -9,4 +9,4 @@
 #   resources:
 #     requests:
 #       storage: 10Gi
-#   storageClassName: nfs-csi
+#   storageClassName: handside-nas-nfs
