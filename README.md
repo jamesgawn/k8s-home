@@ -7,45 +7,55 @@ The repository for the configuration of my home kubernetes cluster.
 ### Bootstrap cluster on Raspberry PIs
 
 1. Login to your Raspberry PI
+
+2. Enable memory/cpu settings 
 ```bash
-sudo sed -i '$ s/$/ cgroup_enable=memory cgroup_memory=1 swapaccount=1/' /boot/firmware/cmdline.txt
+sudo sed -i '$ s/$/ cgroup_enable=memory cgroup_memory=1/' /boot/firmware/cmdline.txt
 ```
 
-2. Install Microk8s
+3. Enable automated updates
+```bash
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+sudo tee -a /etc/apt/apt.conf.d/20auto-upgrades > /dev/null << EOF
+> APT::Periodic::Verbose "1";
+> EOF
+```
+
+5. Install Microk8s
 ```bash
 sudo snap install microk8s --classic
 ```
 
-3. Update permissions to be able to execute commands without sudo
+5. Update permissions to be able to execute commands without sudo
 ```bash
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 su - $USER
 ```
 
-4. Wait until the cluster is up
+6. Wait until the cluster is up
 ```bash
 microk8s status --wait-ready
 ```
 
-5. Enable useful services 
+7. Enable useful services 
 ```bash
 microk8s enable ingress 
 microk8s enable metrics-server
 microk8s enable dashboard
 ```
 
-7. Install kubectl cli
+8. Install kubectl cli
 ```bash 
 sudo snap install kubectl --classic
 ```
 
-8. Install helm cli
+9. Install helm cli
 ```bash 
 sudo snap install helm --classic
 ```
 
-9. Download kubectl config --classic
+10. Download kubectl config --classic
 ```bash
 microk8s config > ~/.kube/config ; chmod 600 ~/.kube/config
 ```
