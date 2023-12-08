@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd-image-updater.argoproj.io/image-list: ghcr.io/jamesgawn/gohelloworld:1.x.x
+    argocd-image-updater.argoproj.io/image-list: ghcr.io/jamesgawn/gohelloworld
 spec:
   destination:
     namespace: default
