@@ -6,3 +6,4 @@ metadata:
 
 resources:
 - datadog-secret.yaml
+- datadog-namespace.yaml
