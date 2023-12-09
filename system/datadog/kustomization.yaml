@@ -7,3 +7,5 @@ metadata:
 resources:
 - datadog-secret.yaml
 - datadog-namespace.yaml
+- datadog-operator.yaml
+- datadog-agent.yaml
