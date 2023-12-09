@@ -7,6 +7,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd-image-updater.argoproj.io/image-list: ghcr.io/jamesgawn/gohelloworld
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   destination:
     namespace: default
