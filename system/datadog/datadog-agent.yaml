@@ -17,6 +17,9 @@ spec:
     clusterAgent:
       image:
         name: gcr.io/datadoghq/cluster-agent:latest
+      env: 
+        - name: DD_CLUSTER_NAME
+          value: "k8s-home"
     nodeAgent:
       image:
         name: gcr.io/datadoghq/agent:latest
