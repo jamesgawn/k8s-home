@@ -11,7 +11,7 @@ metadata:
     argocd-image-updater.argoproj.io/git-branch: main
 spec:
   destination:
-    namespace: default
+    namespace: helloworld
     server: 'https://kubernetes.default.svc'
   source:
     path: apps/helloworld
