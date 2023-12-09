@@ -13,6 +13,9 @@ spec:
       appSecret:
         secretName: datadog-secret
         keyName: app-key
+  features:
+    liveContainerCollection:
+      enabled: true
   override:
     clusterAgent:
       image:
