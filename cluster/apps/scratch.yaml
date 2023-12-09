@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: scratch
-  namespace: argocd
+  namespace: scratch
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
