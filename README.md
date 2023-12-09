@@ -169,3 +169,28 @@ kubectl -n default create secret tls cloudflare-origin-cert-secret --key key.pem
 ```bash
 kubeseal --format=yaml --cert=sealed-secret-public-cert.pem < cloudflare-origin-cert-secret.yaml > cloudflare-origin-cert-secret-sealed.yaml
 ```
+
+### How to bootstrap initial cluster app
+
+1. Login to ArgoCD UI
+2. Click on New App
+3. Click Edit As YAML
+4. Paste content below
+```yaml 
+project: default
+source:
+  repoURL: 'git@github.com:jamesgawn/k8s-home.git'
+  path: cluster
+  targetRevision: HEAD
+  directory:
+    recurse: true
+    jsonnet: {}
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: default
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+```
+5. Click Create
