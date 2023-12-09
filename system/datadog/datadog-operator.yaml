@@ -17,5 +17,5 @@ spec:
     namespace: datadog
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false
+      selfHeal: false
