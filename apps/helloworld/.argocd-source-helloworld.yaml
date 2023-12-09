@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - ghcr.io/jamesgawn/gohelloworld:1.0.9
