@@ -3,8 +3,8 @@ kind: Kustomization
 metadata:
   name: datadog
 
-resources:
-- datadog-secret.yaml
-- datadog-namespace.yaml
-- datadog-operator.yaml
-# - datadog-agent.yaml
+# resources:
+# - datadog-secret.yaml
+# - datadog-namespace.yaml
+# - datadog-operator.yaml
+# # - datadog-agent.yaml
