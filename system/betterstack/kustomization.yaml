@@ -3,5 +3,5 @@ kind: Kustomization
 metadata:
   name: betterstack
 
-resources:
+# resources:
 # - datadog-secret.yaml
