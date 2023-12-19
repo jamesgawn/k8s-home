@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: datadog
+  name: betterstack
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: datadog
+    namespace: betterstack
     server: 'https://kubernetes.default.svc'
   source:
-    path: system/datadog
+    path: system/betterstack
     repoURL: 'git@github.com:jamesgawn/k8s-home.git'
     targetRevision: HEAD
   project: default
