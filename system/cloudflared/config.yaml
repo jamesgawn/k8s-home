@@ -18,5 +18,5 @@ data:
     - hostname: kube-dash-v2.gawn.dev
       service: https://kubernetes-dashboard.kube-system.svc.cluster.local
     - hostname: argocd-v2.gawn.dev
-      service: https://argocd-server.argocd.svc.cluster.local
+      service: http://argocd-server.argocd.svc.cluster.local:8080
     - service: http_status:404
