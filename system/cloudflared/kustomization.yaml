@@ -8,3 +8,4 @@ resources:
   - deployment.yaml
   - config.yaml
   - cloudflared-tunnel-creds.yaml
+  - namespace.yaml
