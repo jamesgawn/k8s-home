@@ -1,0 +1,14 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: cloudflared-tunnel-creds
+  namespace: cloudflared
+spec:
+  encryptedData:
+    3d880b14-b44c-4a24-9ae5-49c5098d6253.json: AgBVtlToj2adhKPIx5zaljV9p1nQBBRB5qJFrkz7O/buhTevx4mVDnZchBtPpEqOcWrdtA2LKGgiuRw2yO3xeG8llHr+ndXSNy3Fd48jiSkdIYox+C4RfsOF1tnCNlkk1U+sJaubV6FgQ7gfJvyw9p0WYr6vbwMtP46jYYxL//0WJH0IPOT3CcmreJMhwFeiDu0HBqCdfQUtMFzmNjCR6qVsdrbSNktptzO/yU40Ee2q6xjH49+ldgP1EZG29yGsPc9FSNp4mQASFc28hXhagQmDSQrCX5ZHtgIHmoauZS8fFKA5L8WqDRg/5aeEZC1Sj6k0mCXG5jkIY9RU+tujXkiky9gcVTeSmbhYXUr2Y1fOQ0zaOSrfWiOpW3V5W3Ih2vIf+rd/qrnET8t8qieMzqUHaYFNKLhWdvE1QwBCPI0jUWrHHEksIXPtenbTsXTFGxhztGftoEsRLhKeyxlbkmpS0Fvr7FfEbbOptiBTf2MDKQeGyqi4RNwSzw5J6JGBRpNniJMkUuO3v0ZGoiQdbdBEg1XdGOhcRkwIpcoda/NbXjob802IqPsrlqd8TJhgyPek3NG08gBukPEG8Mdv+tGW21rjTUlIIqBPs2Ka9SIwuYGzRWwA9MDcGT3q+2ye0mV/TDWoDrn3cVz5LOZTWwS3+b+ug5187tJ45ampHby+9cVaVRgUPK6TRdLYBrVhTAg98qXvlqV+GUni3NP5cGC+RQx5hSDa/K7WP3jr0e4FLyDhKAidYQ/9gCVJqnx+gZTp9n8k2Ph2V87SZc0XaqKAgtryHRJF/QFNvcOK0563mfcEWn7p43sk5X/2OF052Auu0D7vPDBMgk2VKrdvs4jd2SOK6fhxGE8L4/cmZO/4cnW+keWhcw9OKCwMSp8iSEFDUN9rBT6iypa/H6Smvb8kLw==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: cloudflared-tunnel-creds
+      namespace: cloudflared
