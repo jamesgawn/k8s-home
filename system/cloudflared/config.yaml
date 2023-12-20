@@ -17,6 +17,10 @@ data:
       service: http://helloworld.default.svc.cluster.local
     - hostname: kube-dash-v2.gawn.dev
       service: https://kubernetes-dashboard.kube-system.svc.cluster.local
+      originRequest:
+        noTLSverify: true
     - hostname: argocd-v2.gawn.dev
       service: https://argocd-server.argocd.svc.cluster.local
+      originRequest:
+        noTLSverify: true
     - service: http_status:404
