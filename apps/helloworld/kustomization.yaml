@@ -5,6 +5,5 @@ metadata:
   name: helloworld
 
 resources:
-- ingress.yaml
 - deployment.yaml
 - service.yaml
