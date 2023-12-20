@@ -18,9 +18,9 @@ data:
     - hostname: kube-dash-v2.gawn.dev
       service: https://kubernetes-dashboard.kube-system.svc.cluster.local
       originRequest:
-        noTLSverify: true
+        noTLSVerify: true
     - hostname: argocd-v2.gawn.dev
       service: https://argocd-server.argocd.svc.cluster.local
       originRequest:
-        noTLSverify: true
+        noTLSVerify: true
     - service: http_status:404
