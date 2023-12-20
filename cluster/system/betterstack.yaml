@@ -18,3 +18,8 @@ spec:
     automated:
       prune: false
       selfHeal: false
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: betterstack
