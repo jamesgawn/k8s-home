@@ -1,6 +1,12 @@
 # K8S Home
 
-The repository for the configuration of my home kubernetes cluster.
+The repository for the configuration of my home kubernetes cluster. The system utilises the following products:
+
+- [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) - To enable automated deployment of changes in this repository via a gitops process
+- [Reloader](https://github.com/stakater/Reloader) - To enable automated redeployment of deployments when related configuration or secrets are changed
+- [Cloudflared](https://github.com/cloudflare/cloudflared) - To enable ingress from Cloudflare's CDN to externalise services hosted within the cluster
+- [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) - To allow secrets to be securely stored in a public repo using public/private key cryptography
+- [CSI Storage Driver - NFS](https://github.com/kubernetes-csi/csi-driver-nfs) - To enable services to utilise NFS backed persistent storage across multiple nodes.
 
 ## Getting Started
 
