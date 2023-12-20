@@ -13,13 +13,13 @@ data:
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
-    - hostname: helloworld-v2.gawn.dev
+    - hostname: helloworld.gawn.dev
       service: http://helloworld.default.svc.cluster.local
-    - hostname: kube-dash-v2.gawn.dev
+    - hostname: kube-dash.gawn.dev
       service: https://kubernetes-dashboard.kube-system.svc.cluster.local
       originRequest:
         noTLSVerify: true
-    - hostname: argocd-v2.gawn.dev
+    - hostname: argocd.gawn.dev
       service: https://argocd-server.argocd.svc.cluster.local
       originRequest:
         noTLSVerify: true
