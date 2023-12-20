@@ -15,7 +15,7 @@ data:
     ingress:
     - hostname: helloworld.gawn.dev
       service: http://helloworld.default.svc.cluster.local
-    - hostname: helloworld-v2.gawn.dev
+    - hostname: helloworld-v3.gawn.dev
       service: http://helloworld.default.svc.cluster.local
     - hostname: kube-dash.gawn.dev
       service: https://kubernetes-dashboard.kube-system.svc.cluster.local
