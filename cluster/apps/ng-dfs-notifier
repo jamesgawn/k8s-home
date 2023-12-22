@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ng-dfs-notifier
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: ghcr.io/jamesgawn/gohelloworld
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+spec:
+  destination:
+    namespace: ng-dfs-notifier
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: apps/ng-dfs-notifier
+    repoURL: 'git@github.com:jamesgawn/k8s-home.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ng-dfs-notifier
