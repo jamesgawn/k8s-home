@@ -8,6 +8,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolcy: Never
           containers:
           - name: ng-dfs-notifier
             image: ghcr.io/jamesgawn/ng-dfs-notifier
