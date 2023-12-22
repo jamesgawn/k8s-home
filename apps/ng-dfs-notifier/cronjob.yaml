@@ -24,7 +24,6 @@ spec:
                 secretKeyRef:
                   name: telegam-bot-secret
                   key: token
-          restartPolicy: Never
           volumes:
             - name: nfs
               persistentVolumeClaim:
