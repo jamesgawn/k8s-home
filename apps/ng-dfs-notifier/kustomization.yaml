@@ -3,3 +3,6 @@ kind: Kustomization
 namespace: ng-dfs-notifier
 metadata:
   name: ng-dfs-notifier
+
+resources:
+  - "storage.yaml"
