@@ -25,7 +25,7 @@ spec:
                   name: telegam-bot-secret
                   key: token
             restartPolicy: Never
-      volumes:
-        - name: nfs
-          persistentVolumeClaim:
-            claimName: database-storage-pvc
+        volumes:
+          - name: nfs
+            persistentVolumeClaim:
+              claimName: database-storage-pvc
