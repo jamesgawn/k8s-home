@@ -15,7 +15,7 @@ spec:
                 claimName: database-storage-pvc
           containers:
           - name: ng-dfs-notifier
-            image: ghcr.io/jamesgawn/ng-dfs-notifier:0.1.2
+            image: ghcr.io/jamesgawn/ng-dfs-notifier:0.1.3
             imagePullPolicy: IfNotPresent
             command:
             - /ng-dfs-notifier
