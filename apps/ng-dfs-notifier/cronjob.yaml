@@ -21,7 +21,7 @@ spec:
             command:
             - /ng-dfs-notifier
             args:
-            - "--databaseLocation /storage/events.db"
+            - "-databaseLocation=/storage/events.db"
             volumeMounts:
             - name: nfs
               mountPath: "/storage"
