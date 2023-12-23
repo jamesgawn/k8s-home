@@ -19,7 +19,7 @@ spec:
             image: ghcr.io/jamesgawn/ng-dfs-notifier:0.1.3
             imagePullPolicy: IfNotPresent
             command:
-            - /ng-dfs-notifier
+            - /ng-dfs-notifier --databaseLocation /storage/events.db
             volumeMounts:
             - name: nfs
               mountPath: "/storage"
