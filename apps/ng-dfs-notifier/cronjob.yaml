@@ -8,7 +8,10 @@ spec:
     spec:
       template:
         spec:
-          restartPolcy: Never
+          volumes:
+            - name: nfs
+              persistentVolumeClaim:
+                claimName: database-storage-pvc
           containers:
           - name: ng-dfs-notifier
             image: ghcr.io/jamesgawn/ng-dfs-notifier
@@ -25,7 +28,3 @@ spec:
                 secretKeyRef:
                   name: telegam-bot-secret
                   key: token
-          volumes:
-            - name: nfs
-              persistentVolumeClaim:
-                claimName: database-storage-pvc
