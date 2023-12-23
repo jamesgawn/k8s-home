@@ -20,7 +20,7 @@ spec:
             imagePullPolicy: IfNotPresent
             command:
             - /ng-dfs-notifier
-            - "---databaseLocation /storage/events.db"
+            - "-databaseLocation /storage/events.db"
             volumeMounts:
             - name: nfs
               mountPath: "/storage"
