@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: ng-dfs-notifier
 spec:
-  schedule: "5 * * * *"
+  schedule: "*/5 * * * *"
   jobTemplate:
     spec:
       suspend: false
@@ -16,7 +16,7 @@ spec:
                 claimName: database-storage-pvc
           containers:
           - name: ng-dfs-notifier
-            image: ghcr.io/jamesgawn/ng-dfs-notifier:0.1.3
+            image: ghcr.io/jamesgawn/ng-dfs-notifier:0.1.4
             imagePullPolicy: IfNotPresent
             command:
             - /ng-dfs-notifier
