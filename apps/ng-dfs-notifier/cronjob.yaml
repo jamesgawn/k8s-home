@@ -6,6 +6,7 @@ spec:
   schedule: "5 * * * *"
   jobTemplate:
     spec:
+      suspend: true
       backoffLimit: 2
       template:
         spec:
