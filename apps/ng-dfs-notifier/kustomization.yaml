@@ -8,3 +8,4 @@ resources:
   - "storage.yaml"
   - "telegram-bot-secret.yaml"
   - "cronjob.yaml"
+  - "test.yaml"
