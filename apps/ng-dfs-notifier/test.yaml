@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: test
-          image: arm64v8/ubuntu:22.04
+          image: ubuntu:latest
           securityContext:
             privileged: false
           volumeMounts:
